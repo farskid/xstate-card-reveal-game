@@ -1,0 +1,39 @@
+.matrix {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  border: 1px solid;
+  transform: rotateY(0);
+  transition: transform 250ms ease;
+}
+
+.cell .cell-content {
+  transition: transform 100ms ease;
+}
+
+.cell:not(:disabled) {
+  cursor: pointer;
+}
+
+.cell:not(:disabled):hover {
+  background-color: yellow;
+}
+
+.cell.revealed {
+  transform: rotateY(180deg);
+}
+.cell.revealed .cell-content {
+  transform: rotateY(180deg);
+}
